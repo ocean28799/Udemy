@@ -1,0 +1,172 @@
+.myNavbar{
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background-color: $color-white-0;
+  transition: all .5s;
+  &.headerClass{
+    border-bottom: 5px solid $color-black-light;
+  }
+  .navbar {
+    .header__left {
+      display: flex;
+      align-items: center;
+      @include styleText($color-black-light, $fs-1, $fw-normal);
+      justify-content: center;
+      .navbar-brand img {
+        width: 10rem;
+      }
+  
+      .header__form {
+        flex-grow: 5;
+        padding-left: 5%;
+        .input-group {
+          .input-search {
+            background-color: $color-gray-1;
+            border: none;
+            font-size: $fs-1;
+            transition: none;
+            &:focus {
+              box-shadow: none;
+              background-color: $color-white-0;
+              border-top: 1px solid $color-gray-3;
+              border-bottom: 1px solid $color-gray-3;
+              border-left: 1px solid $color-gray-3;
+              border-right: none;
+            }
+  
+            &:focus + .input-group-append {
+              .input-group-text {
+                background-color: $color-white-0;
+                color: $color-red-0;
+                border-top: 1px solid $color-gray-3;
+                border-bottom: 1px solid $color-gray-3;
+                border-right: 1px solid $color-gray-3;
+                border-left: none;
+              }
+              &:hover {
+                cursor: pointer;
+  
+                .input-group-text {
+                  color: $color-white-0;
+                  background-color: $color-red-0;
+                }
+              }
+            }
+          }
+          .input-group-append {
+            .input-group-text {
+              background-color: $color-gray-1;
+              color: $color-red-0;
+              border: none;
+              transition: all 0.05s;
+            }
+            transition: all 0.05s;
+            &:hover {
+              cursor: pointer;
+  
+              .input-group-text {
+                color: $color-white-0;
+                background-color: $color-red-0;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .header__right {
+      display: flex;
+      .navbar-nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .nav-item {
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          border: 1px solid transparent;
+          box-sizing: border-box;
+          .nav-link {
+            text-decoration: none;
+            @include styleText($color-black-light, $fs-1, $fw-normal);
+            //padding: $pd-1 $pd-2;
+            padding-top: 10%;
+            position: relative;
+  
+            .tooltiptext{
+              opacity: 0;
+              width: 120px;
+              background-color: black;
+              color: black;
+              text-align: center;
+              border-radius: 6px;
+              padding: 5px 0;
+              position: absolute;
+              z-index: 10;
+              top: 150%;
+              left: 50%;
+              margin-left: -60px;
+  
+              &::after{
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                left: 20%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent transparent black transparent;
+              }
+            }
+  
+            &:hover .tooltiptext{
+              opacity: 1;
+            }
+          }
+  
+          
+          &:hover {
+            background-color: $color-gray-1;
+            border: 1px solid $color-black-dark;
+            box-sizing: border-box;
+          }
+        }
+  
+        .nav-item:nth-child(3) {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          padding-top: 2%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVE
+
+@include responsive("extra-large") {
+  .header__right {
+    .ude-business,
+    .ude-teach {
+      display: none;
+    }
+  }
+}
+
+@include responsive("medium") {
+  .header__left {
+    .header__form,
+    .header__cate {
+      display: none;
+    }
+  }
+
+  .header__right {
+    .ude-btnGroup {
+      display: none;
+    }
+  }
+}

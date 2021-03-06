@@ -1,0 +1,40 @@
+.companies{
+    background-color: #f7f8fa;
+    padding-top: 5%;
+    border-bottom: 1px solid $color-gray-6;
+    p{
+        text-align: center;
+        @include styleText(#686f7a,$fs-1,$fw-normal);
+    }
+    .company_content{
+        padding-bottom: 5%;
+        
+        .company_logo{
+            margin-top: 3.9%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .row{
+            margin-top: 3.9%;
+            text-align: center;
+            
+           
+            .company_stack{
+                padding: 1% 5%;
+                
+                h1{
+                    @include styleText($color-black-light,$fs-2 - 1,$fw-bold-1);
+                    margin-bottom: 3%
+                }
+                p{
+                    @include styleText($color-black-0,$fs-0 + 1,$fw-normal);
+                    margin-bottom: 4.5%;
+                }
+
+                padding-bottom: 3%;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,46 @@
+.topCategories{
+    .content{
+        
+        h1{
+            @include styleText($color-black-0,$fs-3,$fw-bold);
+            margin-bottom: $mg-2;
+        }
+
+        .row{
+            margin-bottom: 1%;
+            box-sizing: border-box;
+                
+            .col-md-3{
+                
+                .item{
+                    border: 1px solid $color-gray-6;
+                    border-bottom: 3px solid $color-gray-6;
+                    padding: $pd-1 + 5;
+                }
+
+                .row{
+                    .col-3{
+                        font-size: $fs-3 +5;
+                    }
+                    .col-9{
+                        @include styleText(#14171c,$fs-0,$fw-normal);
+                        margin-top: $mg-1;
+                    }
+                }
+
+                &:hover{
+                    .item{
+                        background-color: $color-gray-5;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            
+            
+        }
+
+        
+    }
+    
+}

@@ -1,0 +1,62 @@
+.feedback{
+    margin-top: 2%;
+    background-color: #f7f8fa;
+    .feedback_content{
+        h1{
+            @include styleText($color-black-0,$fs-3,$fw-bold);
+            padding-top: 3% ;
+            margin-bottom: 2%;
+        }
+    }
+
+    .row{
+
+        .col-md-4{
+            
+            .item{
+
+                background-color: $color-white-0;
+                border-radius: $border-radius + 1;
+                padding: 32px;
+                border-right: 3px solid $color-black-dark;
+                border-bottom: 3px solid $color-black-dark;
+
+                .row{
+                    .col-3,.img-border{
+                        width:100%;
+                        height: 6.4rem;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        border:1px solid transparent;
+                        position: relative;
+                        
+                        img{
+                            position: absolute;
+                            top:0;
+                            left: -10px;
+                            height: 100%;
+                        }
+
+                    }
+
+                    .col-9{
+                        @include styleText($color-black-0,$fs-0 + 1,$fw-bold-1);
+                        padding-top: 10%;
+                        padding-left: 6%;
+                    }
+
+                    .text{
+                        @include styleText($color-black-0,$fs-0,$fw-normal);
+                        letter-spacing: 1px;
+                        word-spacing: 1px;
+                        padding-top: 10%;
+                    }
+                }
+
+                
+            }
+        }
+    }
+    
+
+}
